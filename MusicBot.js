@@ -1,9 +1,11 @@
 const { Client, Util } = require('discord.js');
-const { PREFIX, GOOGLE_API_KEY } = require('./config');
+const { PREFIX } = require('./config');
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 
 const client = new Client({ disableEveryone: true });
+
+const GOOGLE_API_KEY = process.env.GOOGLE_KEY;
 
 const youtube = new YouTube(GOOGLE_API_KEY);
 
@@ -195,4 +197,4 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`🎶 Start playing: **${song.title}**`);
 }
 
-client.login(process.env.BOT_TOKEN);
+client.login(process.env.TOKEN);
