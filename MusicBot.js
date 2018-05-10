@@ -1,7 +1,11 @@
 const { Client, Util } = require('discord.js');
-const { TOKEN, PREFIX, GOOGLE_API_KEY } = require('./config');
+const { PREFIX } = require('./config');
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
+
+const GOOGLE_API_KEY = process.env.GOOGLE_KEY
+
+const TOKEN = process.env.BOT_TOKEN
 
 const client = new Client({ disableEveryone: true });
 
